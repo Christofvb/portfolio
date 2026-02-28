@@ -15,7 +15,7 @@ class EducationsController < ApplicationController
     if @education.save
       redirect_to educations_path, notice: "Education created successfully"
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -25,7 +25,7 @@ class EducationsController < ApplicationController
     if @education.update(education_params)
       redirect_to educations_path, notice: "Education updated successfully"
     else
-      render :edit
+      render :edit, status: :unprocessable_entity
     end
   end
 

@@ -15,7 +15,7 @@ class SkillsController < ApplicationController
     if @skill.save
       redirect_to skills_path, notice: "Skill created successfully"
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -25,7 +25,7 @@ class SkillsController < ApplicationController
     if @skill.update(skill_params)
       redirect_to skills_path, notice: "Skill updated successfully"
     else
-      render :edit
+      render :edit, status: :unprocessable_entity
     end
   end
 
