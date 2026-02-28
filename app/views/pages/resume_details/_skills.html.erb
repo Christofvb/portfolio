@@ -1,5 +1,5 @@
 <% grouped = @skills.group_by { |s| Skill::SKILL_TYPES.key(s.skill_type) } %>
-<% labels = { language: "Langages", framework: "Frameworks", tool: "Outils", other: "Autres" } %>
+<% labels = { language: t("resume.skills_types.languages"), framework: t("resume.skills_types.frameworks"), tool: t("resume.skills_types.tools"), other: t("resume.skills_types.other") } %>
 
 <div class="space-y-5">
   <% labels.each do |type, label| %>

@@ -28,4 +28,61 @@
 #       enabled: "ON"
 
 en:
-  hello: "Hello world"
+  nav:
+    home: "Home"
+    resume: "Curriculum Vitae"
+    portfolio: "Portfolio"
+  footer:
+    sign_out: "Sign out"
+    sign_in: "Sign in"
+  home:
+    eyebrow: "Web Developer"
+    description: "I design performant, maintainable web applications focused on user experience."
+    btn_resume: "My Resume"
+    card_arch:
+      title: "Rails Architecture"
+    card_code:
+      title: "Maintainable Code"
+    card_exp:
+      title: "Experience"
+      years: "years"
+    traits:
+      curious: "Curious"
+      rigorous: "Rigorous"
+      detail: "Attention to detail"
+  resume:
+    job_title: "Fullstack Web Developer"
+    download: "Download"
+    tech_stack: "Technical Stack"
+    skills_section: "Skills"
+    communication: "Communication"
+    languages_spoken: "Spoken Languages"
+    algorithms: "Algorithms & Challenges"
+    codewars_unavailable: "Codewars profile temporarily unavailable."
+    experience_section: "Professional Journey"
+    experience_title: "Experience"
+    education_section: "Academic Journey"
+    education_title: "Education"
+    skills_types:
+      languages: "Languages"
+      frameworks: "Frameworks"
+      tools: "Tools"
+      other: "Other"
+    experience:
+      present: "Present"
+      missions: "Tasks"
+      technologies: "Technologies"
+      projects: "Projects"
+    education:
+      present: "Present"
+    language:
+      dutch: "Dutch"
+      native: "Native Language"
+      french: "French"
+      fluent: "Fluent"
+      english: "English"
+      professional: "Professional"
+  portfolio:
+    title: "Open Source & personal projects"
+    subtitle: "My public GitHub repos — Ruby, JavaScript and more."
+    empty: "No projects available at the moment."

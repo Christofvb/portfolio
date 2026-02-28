@@ -12,7 +12,7 @@
         <h3 class="font-semibold text-white text-sm leading-snug"><%= education.school %></h3>
         <span class="text-xs whitespace-nowrap flex-shrink-0 text-muted">
           <%= education.start_date&.strftime("%m/%Y") %> –
-          <%= education.end_date.present? ? education.end_date.strftime("%m/%Y") : "Présent" %>
+          <%= education.end_date.present? ? education.end_date.strftime("%m/%Y") : t("resume.education.present") %>
         </span>
       </div>
 

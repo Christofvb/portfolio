@@ -1,2 +1,59 @@
 nl:
-  hello: "Hallo"
+  nav:
+    home: "Thuis"
+    resume: "Curriculum Vitae"
+    portfolio: "Portfolio"
+  footer:
+    sign_out: "Afmelden"
+    sign_in: "Aanmelden"
+  home:
+    eyebrow: "Webontwikkelaar"
+    description: "Ik ontwerp performante, onderhoudbare webapplicaties gericht op gebruikerservaring."
+    btn_resume: "Mijn CV"
+    card_arch:
+      title: "Rails Architectuur"
+    card_code:
+      title: "Onderhoudbare Code"
+    card_exp:
+      title: "Ervaring"
+      years: "jaar"
+    traits:
+      curious: "Nieuwsgierig"
+      rigorous: "Rigoureus"
+      detail: "Oog voor detail"
+  resume:
+    job_title: "Fullstack Webontwikkelaar"
+    download: "Downloaden"
+    tech_stack: "Technische Stack"
+    skills_section: "Vaardigheden"
+    communication: "Communicatie"
+    languages_spoken: "Gesproken talen"
+    algorithms: "Algoritmen & uitdagingen"
+    codewars_unavailable: "Codewars-profiel tijdelijk niet beschikbaar."
+    experience_section: "Professioneel parcours"
+    experience_title: "Ervaring"
+    education_section: "Academisch parcours"
+    education_title: "Opleidingen"
+    skills_types:
+      languages: "Talen"
+      frameworks: "Frameworks"
+      tools: "Hulpmiddelen"
+      other: "Overige"
+    experience:
+      present: "Heden"
+      missions: "Taken"
+      technologies: "Technologieën"
+      projects: "Projecten"
+    education:
+      present: "Heden"
+    language:
+      dutch: "Nederlands"
+      native: "Moedertaal"
+      french: "Frans"
+      fluent: "Vloeiend"
+      english: "Engels"
+      professional: "Professioneel"
+  portfolio:
+    title: "Open Source & persoonlijke projecten"
+    subtitle: "Mijn publieke GitHub repos — Ruby, JavaScript en meer."
+    empty: "Geen projecten beschikbaar."

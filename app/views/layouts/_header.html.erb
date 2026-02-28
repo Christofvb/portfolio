@@ -6,9 +6,9 @@
     <% end %>
 
     <nav class="flex items-center">
-      <%= link_to "Accueil",          root_path,             class: "header-link#{' active' if current_page?(root_path)}" %>
-      <%= link_to "Curriculum Vitae", curriculum_vitae_path,  class: "header-link#{' active' if current_page?(curriculum_vitae_path)}" %>
-      <%= link_to "Portfolio",        portfolio_path,         class: "header-link#{' active' if current_page?(portfolio_path)}" %>
+      <%= link_to t("nav.home"),    root_path,             class: "header-link#{' active' if current_page?(root_path)}" %>
+      <%= link_to t("nav.resume"), curriculum_vitae_path,  class: "header-link#{' active' if current_page?(curriculum_vitae_path)}" %>
+      <%= link_to t("nav.portfolio"), portfolio_path,      class: "header-link#{' active' if current_page?(portfolio_path)}" %>
 
       <% if user_signed_in? %>
         <div class="header-divider mx-2"></div>

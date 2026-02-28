@@ -16,7 +16,7 @@
         <div class="text-right flex-shrink-0">
           <span class="tl-date">
             <%= experience.start_date.strftime("%b %Y") %> –
-            <%= experience.end_date ? experience.end_date.strftime("%b %Y") : "Aujourd'hui" %>
+            <%= experience.end_date ? experience.end_date.strftime("%b %Y") : t("resume.experience.present") %>
           </span>
           <% if experience.location.present? %>
             <div class="text-xs mt-1 text-right text-muted">
@@ -30,13 +30,13 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4">
           <% if experience.missions.present? %>
             <div class="tl-panel">
-              <p class="tl-panel-label">Missions</p>
+              <p class="tl-panel-label"><%= t("resume.experience.missions") %></p>
               <div class="rich-content text-sm"><%= raw experience.missions %></div>
             </div>
           <% end %>
           <% if experience.tools.present? %>
             <div class="tl-panel">
-              <p class="tl-panel-label">Technologies</p>
+              <p class="tl-panel-label"><%= t("resume.experience.technologies") %></p>
               <div class="rich-content text-sm"><%= raw experience.tools %></div>
             </div>
           <% end %>
@@ -45,7 +45,7 @@
 
       <% if experience.projects.any? %>
         <div class="mt-3">
-          <p class="tl-panel-label">Projets</p>
+          <p class="tl-panel-label"><%= t("resume.experience.projects") %></p>
           <div class="flex flex-wrap gap-2">
             <% experience.projects.each do |project| %>
               <button class="tl-project-chip"

@@ -16,7 +16,7 @@
           Christof Van Berendonck
         </h1>
         <p class="text-sm font-semibold uppercase tracking-widest mt-1 text-accent">
-          Développeur Web Fullstack
+          <%= t("resume.job_title") %>
         </p>
 
         <div class="flex flex-wrap justify-center sm:justify-start gap-x-6 gap-y-2 mt-4 text-xs text-muted">
@@ -34,7 +34,7 @@
 
       <div class="flex-shrink-0 flex items-center">
         <a href="/CV_CVB_DEV_FULLSTACK.pdf" download class="cyber-btn-primary">
-          <i class="fa-solid fa-file-arrow-down fa-sm"></i> Télécharger
+          <i class="fa-solid fa-file-arrow-down fa-sm"></i> <%= t("resume.download") %>
         </a>
       </div>
 
@@ -47,19 +47,19 @@
   <div class="flex flex-col gap-6">
 
     <div class="resume-panel">
-      <span class="cyber-eyebrow">Stack technique</span>
-      <h2 class="text-sm font-bold text-white uppercase tracking-widest mb-5">Compétences</h2>
+      <span class="cyber-eyebrow"><%= t("resume.tech_stack") %></span>
+      <h2 class="text-sm font-bold text-white uppercase tracking-widest mb-5"><%= t("resume.skills_section") %></h2>
       <%= render "pages/resume_details/skills" %>
     </div>
 
     <div class="resume-panel">
-      <span class="cyber-eyebrow">Communication</span>
-      <h2 class="text-sm font-bold text-white uppercase tracking-widest mb-5">Langues parlées</h2>
+      <span class="cyber-eyebrow"><%= t("resume.communication") %></span>
+      <h2 class="text-sm font-bold text-white uppercase tracking-widest mb-5"><%= t("resume.languages_spoken") %></h2>
       <%= render "pages/resume_details/language" %>
     </div>
 
     <div class="resume-panel flex-1 flex flex-col">
-      <span class="cyber-eyebrow">Algorithmes &amp; défis</span>
+      <span class="cyber-eyebrow"><%= t("resume.algorithms") %></span>
       <h2 class="text-sm font-bold text-white uppercase tracking-widest mb-5">Codewars</h2>
 
       <% if @codewars_profile.present? %>
@@ -96,7 +96,7 @@
           </div>
         </div>
       <% else %>
-        <p class="text-sm text-muted">Profil Codewars temporairement indisponible.</p>
+        <p class="text-sm text-muted"><%= t("resume.codewars_unavailable") %></p>
       <% end %>
     </div>
   </div>
@@ -104,14 +104,14 @@
   <div class="flex flex-col gap-6">
 
     <div class="resume-panel">
-      <span class="cyber-eyebrow">Parcours professionnel</span>
-      <h2 class="text-sm font-bold text-white uppercase tracking-widest mb-7">Expérience</h2>
+      <span class="cyber-eyebrow"><%= t("resume.experience_section") %></span>
+      <h2 class="text-sm font-bold text-white uppercase tracking-widest mb-7"><%= t("resume.experience_title") %></h2>
       <%= render "pages/resume_details/experience" %>
     </div>
 
     <div class="resume-panel flex-1">
-      <span class="cyber-eyebrow">Parcours académique</span>
-      <h2 class="text-sm font-bold text-white uppercase tracking-widest mb-7">Formations</h2>
+      <span class="cyber-eyebrow"><%= t("resume.education_section") %></span>
+      <h2 class="text-sm font-bold text-white uppercase tracking-widest mb-7"><%= t("resume.education_title") %></h2>
       <%= render "pages/resume_details/education" %>
     </div>
 

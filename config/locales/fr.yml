@@ -1,2 +1,59 @@
 fr:
-  hello: "Bonjour"
+  nav:
+    home: "Accueil"
+    resume: "Curriculum Vitae"
+    portfolio: "Portfolio"
+  footer:
+    sign_out: "Se déconnecter"
+    sign_in: "Se connecter"
+  home:
+    eyebrow: "Développeur Web"
+    description: "Je conçois des applications web performantes, maintenables et centrées sur l'expérience utilisateur."
+    btn_resume: "Mon CV"
+    card_arch:
+      title: "Architecture Rails"
+    card_code:
+      title: "Code maintenable"
+    card_exp:
+      title: "Expérience"
+      years: "ans"
+    traits:
+      curious: "Curieux"
+      rigorous: "Rigoureux"
+      detail: "Sens du détail"
+  resume:
+    job_title: "Développeur Web Fullstack"
+    download: "Télécharger"
+    tech_stack: "Stack technique"
+    skills_section: "Compétences"
+    communication: "Communication"
+    languages_spoken: "Langues parlées"
+    algorithms: "Algorithmes & défis"
+    codewars_unavailable: "Profil Codewars temporairement indisponible."
+    experience_section: "Parcours professionnel"
+    experience_title: "Expérience"
+    education_section: "Parcours académique"
+    education_title: "Formations"
+    skills_types:
+      languages: "Langages"
+      frameworks: "Frameworks"
+      tools: "Outils"
+      other: "Autres"
+    experience:
+      present: "Aujourd'hui"
+      missions: "Missions"
+      technologies: "Technologies"
+      projects: "Projets"
+    education:
+      present: "Présent"
+    language:
+      dutch: "Néerlandais"
+      native: "Langue maternelle"
+      french: "Français"
+      fluent: "Courant"
+      english: "Anglais"
+      professional: "Professionnel"
+  portfolio:
+    title: "Open Source & projets perso"
+    subtitle: "Mes dépôts publics GitHub — Ruby, JavaScript et plus."
+    empty: "Aucun projet disponible pour le moment."

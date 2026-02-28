@@ -22,9 +22,9 @@
 
     <div>
       <% if user_signed_in? %>
-        <%= button_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "footer-auth" %>
+        <%= button_to t("footer.sign_out"), destroy_user_session_path, method: :delete, class: "footer-auth" %>
       <% else %>
-        <%= link_to "Se connecter", new_user_session_path, class: "footer-auth" %>
+        <%= link_to t("footer.sign_in"), new_user_session_path, class: "footer-auth" %>
       <% end %>
     </div>
 
