@@ -20,9 +20,9 @@ body {
   font-family: ui-sans-serif, system-ui, sans-serif;
 }
 
-.base-container { @apply w-full max-w-6xl mx-auto px-5; }
-.base-text      { @apply font-sans leading-relaxed; color: var(--cyber-text); }
-.base-heading   { @apply font-bold; color: #fff; }
+.base-container { width: 100%; max-width: 72rem; margin-left: auto; margin-right: auto; padding-left: 1.25rem; padding-right: 1.25rem; }
+.base-text      { font-family: ui-sans-serif, system-ui, sans-serif; line-height: 1.625; color: var(--cyber-text); }
+.base-heading   { font-weight: 700; color: #fff; }
 .text-accent    { color: var(--cyber-cyan); }
 .text-muted     { color: var(--cyber-text-muted); }
 
