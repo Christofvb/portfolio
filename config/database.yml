@@ -30,10 +30,7 @@ production:
     pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   cache:
     <<: *production_db
-    migrations_paths: db/cache_migrate
   queue:
     <<: *production_db
-    migrations_paths: db/queue_migrate
   cable:
     <<: *production_db
-    migrations_paths: db/cable_migrate
