@@ -1,0 +1,69 @@
+<div class="default-form">
+  <h2 class="default-form-title">
+    <%= experience.new_record? ? "Créer une expérience" : "Modifier l'expérience" %>
+  </h2>
+
+  <%= form_with(model: experience, class: "space-y-6") do |f| %>
+
+    <div class="default-form-grid">
+      <div>
+        <%= f.label :job_title, "Nom du poste occupé", class: "default-form-label" %>
+        <%= f.text_field :job_title, class: "default-form-input" %>
+      </div>
+
+      <div>
+        <%= f.label :company, "Société", class: "default-form-label" %>
+        <%= f.text_field :company, class: "default-form-input" %>
+      </div>
+
+      <div>
+        <%= f.label :location, "Ville", class: "default-form-label" %>
+        <%= f.text_field :location, class: "default-form-input" %>
+      </div>
+
+      <div>
+        <%= f.label :start_date, "Date de début", class: "default-form-label" %>
+        <%= f.date_field :start_date, class: "default-form-input" %>
+      </div>
+
+      <div>
+        <%= f.label :end_date, "Date de fin", class: "default-form-label" %>
+        <%= f.date_field :end_date, class: "default-form-input" %>
+      </div>
+    </div>
+
+    <div data-controller="tinymce">
+      <%= f.label :missions, "Missions", class: "default-form-label" %>
+      <%= f.text_area :missions, class: "default-form-input editor" %>
+    </div>
+
+    <div data-controller="tinymce">
+      <%= f.label :tools, "Outils / logiciels", class: "default-form-label" %>
+      <%= f.text_area :tools, class: "default-form-input editor" %>
+    </div>
+
+    <h3 class="default-form-section-title">Projets liés</h3>
+    <div data-controller="projects">
+      <div data-projects-target="projects" class="space-y-4">
+        <%= f.fields_for :projects do |project_form| %>
+          <div class="default-form-project">
+            <%= render "project_fields", f: project_form %>
+          </div>
+        <% end %>
+      </div>
+
+      <button data-action="projects#add" type="button" class="default-form-add-project text-blue-500">
+        Ajouter un projet
+      </button>
+
+      <template data-projects-target="template">
+        <div class="default-form-project">
+          <%= f.fields_for :projects, Project.new, child_index: "NEW_RECORD" do |project_form| %>
+            <%= render "project_fields", f: project_form %>
+          <% end %>
+        </div>
+      </template>
+    </div>
+    <%= f.submit "Enregistrer", class: "default-form-submit" %>
+  <% end %>
+</div>

@@ -1,0 +1,81 @@
+@layer components {
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background-color: var(--cyber-surface);
+    border-bottom: 1px solid var(--cyber-border);
+    backdrop-filter: blur(12px);
+  }
+
+  .header-inner {
+    @apply w-full px-4 md:px-8 flex items-center justify-between h-16;
+  }
+
+  .header-flags {
+    @apply flex items-center gap-3;
+  }
+
+  .header-flag-btn {
+    @apply block opacity-50 transition-all duration-200;
+  }
+
+  .header-flag-btn img {
+    @apply w-7 h-5 rounded-sm shadow-sm block;
+  }
+
+  .header-flag-btn:hover {
+    @apply opacity-100;
+  }
+
+  .header-flag-btn.active {
+    @apply opacity-100;
+    filter: drop-shadow(0 0 5px var(--cyber-cyan));
+  }
+
+  .header-flag-btn.active img {
+    outline: 1px solid var(--cyber-border);
+    border-radius: 2px;
+  }
+
+  .header-link {
+    @apply relative px-4 py-2 text-sm font-medium transition-colors duration-200;
+    color: var(--cyber-text-muted);
+  }
+
+  .header-link:hover {
+    color: var(--cyber-cyan);
+  }
+
+  .header-link.active {
+    color: var(--cyber-cyan);
+  }
+
+  .header-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0.75rem;
+    right: 0.75rem;
+    height: 2px;
+    background-color: var(--cyber-cyan);
+    box-shadow: 0 0 8px var(--cyber-cyan);
+    border-radius: 2px;
+  }
+
+  .header-divider {
+    @apply w-px h-5;
+    background-color: rgba(148, 163, 184, 0.15);
+  }
+
+  .header-admin-link {
+    @apply px-3 py-1.5 mx-0.5 text-xs font-medium rounded transition-colors duration-200;
+    color: var(--cyber-text-muted);
+    border: 1px solid rgba(0, 212, 255, 0.1);
+  }
+
+  .header-admin-link:hover {
+    color: var(--cyber-cyan);
+    border-color: var(--cyber-border);
+  }
+}

@@ -1,0 +1,12 @@
+<div>
+  <%= f.label :name, "Nom du projet", class: "default-form-label" %>
+  <%= f.text_field :name, class: "default-form-input" %>
+
+  <%= f.label :description, "Description", class: "default-form-label" %>
+  <%= f.text_area :description, rows: 3, class: "default-form-input editor" %>
+
+  <div class="flex items-center gap-2 mt-2">
+    <%= f.check_box :_destroy, class: "hidden" %>
+    <button data-action="projects#remove" type="button" class="text-red-500">Supprimer</button>
+  </div>
+</div>

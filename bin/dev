@@ -1,0 +1,24 @@
+#!/bin/bash
+set -e
+
+# Fonction pour nettoyer les processus au exit
+cleanup() {
+  echo "Arrêt de Tailwind CSS..."
+  kill $TAILWIND_PID 2>/dev/null || true
+  exit
+}
+
+# Capture Ctrl-C
+trap cleanup SIGINT SIGTERM
+bin/rails tailwindcss:build
+echo "Démarrage de Tailwind CSS en mode watch..."
+# Tailwind watch en arrière-plan
+bin/rails tailwindcss:watch &
+TAILWIND_PID=$!
+
+echo "Démarrage du serveur Rails..."
+# Lancer Rails (bloquant)
+bin/rails server
+
+# Si Rails s'arrête, nettoyer Tailwind
+cleanup

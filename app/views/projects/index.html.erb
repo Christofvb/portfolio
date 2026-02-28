@@ -1,0 +1,23 @@
+<h1 class="text-3xl font-bold mb-6">Tous les projets</h1>
+
+<table class="w-full border-collapse">
+  <thead>
+    <tr class="border-b">
+      <th class="p-2 text-left">Nom</th>
+      <th class="p-2 text-left">Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @projects.each do |project| %>
+      <tr class="border-b">
+        <td class="p-2"><%= project.name %></td>
+        <td class="p-2">
+          <div class="rich-content max-w-none">
+            <%= raw project.description %>
+          </div>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

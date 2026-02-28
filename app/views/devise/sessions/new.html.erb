@@ -1,0 +1,32 @@
+<div class="default-form mx-auto max-w-md">
+  <h2 class="default-form-title text-center">Connexion</h2>
+
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name), class: "space-y-6") do |f| %>
+
+    <div class="default-form-grid">
+      <div>
+        <%= f.label :email, "Adresse e-mail", class: "default-form-label" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "default-form-input" %>
+      </div>
+
+      <div>
+        <%= f.label :password, "Mot de passe", class: "default-form-label" %>
+        <%= f.password_field :password, autocomplete: "current-password", class: "default-form-input" %>
+      </div>
+
+      <% if devise_mapping.rememberable? %>
+        <div class="flex items-center gap-2">
+          <%= f.check_box :remember_me, class: "h-4 w-4" %>
+          <%= f.label :remember_me, "Se souvenir de moi", class: "text-sm" %>
+        </div>
+      <% end %>
+    </div>
+
+    <%= f.submit "Se connecter", class: "default-form-submit" %>
+
+  <% end %>
+
+  <div class="mt-4 text-center">
+    <%= render "devise/shared/links" %>
+  </div>
+</div>

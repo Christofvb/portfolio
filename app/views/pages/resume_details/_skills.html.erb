@@ -1,0 +1,24 @@
+<% grouped = @skills.group_by { |s| Skill::SKILL_TYPES.key(s.skill_type) } %>
+<% labels = { language: "Langages", framework: "Frameworks", tool: "Outils", other: "Autres" } %>
+
+<div class="space-y-5">
+  <% labels.each do |type, label| %>
+    <% skills = grouped[type] %>
+    <% next if skills.blank? %>
+
+    <div>
+      <p class="skill-category-label"><%= label %></p>
+      <div class="flex flex-wrap gap-2">
+        <% skills.each do |skill| %>
+          <div class="skill-tag">
+            <% if skill.image_path.present? %>
+              <%= image_tag skill.image_path, class: "w-4 h-4 object-contain", alt: skill.name %>
+            <% end %>
+            <span class="skill-tag-name"><%= skill.name %></span>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+  <% end %>
+</div>

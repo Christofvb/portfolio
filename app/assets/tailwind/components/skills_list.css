@@ -1,0 +1,35 @@
+@layer components {
+
+  .skill-category-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+    color: var(--cyber-text-muted);
+  }
+
+  .skill-tag {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    padding: 0.375rem 0.625rem;
+    border-radius: 0.5rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    cursor: default;
+    background-color: var(--cyber-surface-2);
+    border: 1px solid var(--cyber-border-subtle);
+  }
+
+  .skill-tag:hover {
+    border-color: var(--cyber-cyan);
+    box-shadow: 0 0 8px rgba(0,212,255,0.2);
+  }
+
+  .skill-tag-name {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--cyber-text);
+  }
+
+}

@@ -1,0 +1,60 @@
+@layer components {
+
+  .default-form {
+    @apply mx-auto max-w-3xl p-8 rounded-2xl;
+    background-color: var(--cyber-surface);
+    border: 1px solid var(--cyber-border);
+    box-shadow: var(--cyber-glow-sm);
+  }
+
+  .default-form-title {
+    @apply text-2xl font-bold mb-6 text-center;
+    color: #ffffff;
+  }
+
+  .default-form-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 gap-6;
+  }
+
+  .default-form-label {
+    @apply font-semibold text-sm;
+    color: var(--cyber-text-muted);
+  }
+
+  .default-form-input {
+    @apply mt-1 block w-full rounded-lg px-3 py-2 transition duration-200;
+    background-color: var(--cyber-surface-2);
+    border: 1px solid var(--cyber-border);
+    color: var(--cyber-text);
+  }
+
+  .default-form-input:focus {
+    outline: none;
+    border-color: var(--cyber-cyan);
+    box-shadow: 0 0 0 2px rgba(0, 212, 255, 0.15);
+  }
+
+  .default-form-submit {
+    @apply w-full font-semibold px-6 py-3 rounded-lg transition duration-200 mt-6;
+    border: 1px solid var(--cyber-cyan);
+    color: var(--cyber-cyan);
+    background-color: transparent;
+  }
+
+  .default-form-submit:hover {
+    background-color: var(--cyber-cyan);
+    color: var(--cyber-bg);
+    box-shadow: var(--cyber-glow-sm);
+  }
+
+  .default-form-section-title {
+    @apply text-xl font-bold mt-8;
+    color: var(--cyber-cyan);
+  }
+
+  .default-form-project {
+    @apply rounded-xl p-4;
+    background-color: var(--cyber-surface-2);
+    border: 1px solid var(--cyber-border);
+  }
+}

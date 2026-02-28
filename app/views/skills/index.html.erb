@@ -1,0 +1,39 @@
+<h1 class="default-table-title">Toutes les compétences</h1>
+
+<div class="mb-4">
+  <%= link_to "Nouvelle compétence", new_skill_path, class: "btn btn-blue" %>
+</div>
+
+<table class="default-table">
+  <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Image</th>
+      <th>Type</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @skills.each do |skill| %>
+      <tr>
+        <td><%= skill.name %></td>
+        <td>
+          <% if skill.image_path.present? %>
+            <%= image_tag skill.image_path, class: "w-10 h-10 object-cover rounded" %>
+          <% else %>
+            <span>Aucune image</span>
+          <% end %>
+        </td>
+        <td><%= skill.skill_type_label %></td>
+        <td>
+          <%= link_to "Afficher", skill_path(skill), class: "default-table-link-show" %> |
+          <%= link_to "Éditer", edit_skill_path(skill), class: "default-table-link-edit" %> |
+          <%= link_to "Supprimer", skill_path(skill),
+                data: { turbo_method: :delete, turbo_confirm: "Supprimer cette compétence ?" },
+                class: "default-table-link-delete" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

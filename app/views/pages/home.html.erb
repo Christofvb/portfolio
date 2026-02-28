@@ -1,0 +1,108 @@
+<% content_for :full_width, '1' %>
+
+<section>
+  <div class="w-full px-4 md:px-8 grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-12 items-center pt-4 pb-4">
+
+    <div class="order-2 lg:order-1">
+      <span class="cyber-eyebrow">Développeur Web</span>
+      <h1 class="text-5xl sm:text-6xl lg:text-[4.5rem] font-black text-white uppercase leading-[0.92] tracking-tight mb-4">
+        Christof<br>
+        <span class="text-accent">Van Berendonck</span>
+      </h1>
+
+      <div class="flex items-center gap-3 mb-3">
+        <div class="cyber-divider !mb-0 w-10 flex-shrink-0"></div>
+        <p class="text-sm font-semibold uppercase tracking-widest text-accent">
+          Full-Stack&nbsp;
+          <span
+            data-controller="typing"
+            data-typing-text-value="Ruby on Rails"
+            data-typing-speed-value="80"
+            data-typing-loop-value="false"
+            data-typing-target="output">
+          </span>
+        </p>
+      </div>
+
+      <p class="text-gray-400 max-w-lg leading-relaxed mb-4 text-[0.95rem]">
+        Je conçois des applications web performantes, maintenables et centrées sur l’expérience utilisateur.
+      </p>
+
+      <div class="flex flex-wrap gap-2 mb-6">
+        <span class="cyber-pill">Ruby on Rails</span>
+        <span class="cyber-pill">JavaScript</span>
+        <span class="cyber-pill">MySQL</span>
+        <span class="cyber-pill">Hotwire</span>
+        <span class="cyber-pill">Tailwind CSS</span>
+        <span class="cyber-pill">Git</span>
+      </div>
+
+      <div class="flex flex-wrap gap-4">
+        <%= link_to curriculum_vitae_path, class: "cyber-btn-primary" do %>
+          <i class="fa-solid fa-file-lines fa-sm"></i> Mon CV
+        <% end %>
+        <%= link_to portfolio_path, class: "cyber-btn-outline" do %>
+          Portfolio <i class="fa-solid fa-arrow-right fa-sm"></i>
+        <% end %>
+      </div>
+
+    </div>
+
+    <div class="order-1 lg:order-2 flex justify-center items-center">
+      <div class="cyber-avatar-wrapper">
+        <div class="cyber-ring cyber-ring-1"></div>
+        <div class="cyber-ring cyber-ring-2"></div>
+        <%= image_tag "avatar.png", class: "cyber-avatar", alt: "Christof Van Berendonck" %>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="w-full px-4 md:px-8 pt-4 pb-0">
+
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+
+      <div class="cyber-card-block">
+        <div class="flex items-center gap-3 mb-3">
+          <div class="cyber-card-icon"><i class="fa-solid fa-layer-group"></i></div>
+          <h3 class="text-base font-bold text-white uppercase">Architecture Rails</h3>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <span class="cyber-trait">MVC</span>
+          <span class="cyber-trait">Service objects</span>
+          <span class="cyber-trait">Background jobs</span>
+          <span class="cyber-trait">Optimisation SQL</span>
+          <span class="cyber-trait">API REST & GraphQL</span>
+        </div>
+      </div>
+
+      <div class="cyber-card-block">
+        <div class="flex items-center gap-3 mb-3">
+          <div class="cyber-card-icon"><i class="fa-solid fa-code"></i></div>
+          <h3 class="text-base font-bold text-white uppercase">Code maintenable</h3>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <span class="cyber-trait">Lisible</span>
+          <span class="cyber-trait">Robuste</span>
+          <span class="cyber-trait">Maintenable</span>
+          <span class="cyber-trait">Scalable</span>
+          <span class="cyber-trait">RSpec</span>
+        </div>
+      </div>
+
+      <div class="cyber-card-block">
+        <div class="flex items-center gap-3 mb-3">
+          <div class="cyber-card-icon"><i class="fa-solid fa-briefcase"></i></div>
+          <h3 class="text-base font-bold text-white uppercase">Expérience</h3>
+          <div class="cyber-stat ml-6">2+<span class="cyber-stat-label">ans</span></div>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <span class="cyber-trait">Curieux</span>
+          <span class="cyber-trait">Rigoureux</span>
+          <span class="cyber-trait">Sens du détail</span>
+          <span class="cyber-trait">Orienté solution</span>
+          <span class="cyber-trait">Esprit d'équipe</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

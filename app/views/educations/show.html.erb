@@ -1,0 +1,15 @@
+<h1 class="text-3xl font-bold mb-4"><%= @education.school %></h1>
+
+<p><strong>Niveau d'étude :</strong> <%= @education.degree %></p>
+<p><strong>Nom du diplôme:</strong> <%= @education.description %></p>
+<p><strong>Dates :</strong> <%= @education.start_date %> - <%= @education.end_date || "En cours" %></p>
+
+<hr class="my-6">
+
+<div class="flex gap-4">
+  <%= link_to "Retour à la liste", educations_path, class: "bg-gray-500 text-white px-4 py-2 rounded" %>
+  <%= link_to "Éditer", edit_education_path(@education), class: "bg-blue-600 text-white px-4 py-2 rounded" %>
+  <%= link_to "Supprimer", @education,
+        data: { turbo_method: :delete, turbo_confirm: "Supprimer cette expérience ?" },
+        class: "bg-red-600 text-white px-4 py-2 rounded" %>
+</div>

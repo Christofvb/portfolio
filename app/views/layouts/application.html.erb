@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= content_for(:title) || "Christof Van Berendonck – Dev Web Fullstack" %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= yield :head %>
+
+    <script src="https://cdn.tiny.cloud/1/<%= Rails.application.credentials.dig(:tiny_mce, :api_key)%>/tinymce/8/tinymce.min.js" referrerpolicy="origin" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-papYcdxYh96..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <%= stylesheet_link_tag "tailwind", "data-turbo-track": "reload" %>
+
+    <%= favicon_link_tag "logos/logo_dev_bleu.png", type: "image/png" %>
+    <link rel="apple-touch-icon" href=<%- asset_path 'logos/logo_dev_bleu.png'%>>
+
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body class="min-h-screen flex flex-col base-text">
+
+    <%= render "layouts/header" %>
+
+    <main class="flex-1 w-full">
+      <% if content_for?(:full_width) %>
+        <%= yield %>
+      <% else %>
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <%= yield %>
+        </div>
+      <% end %>
+    </main>
+
+    <%= render "layouts/footer" %>
+  </body>
+</html>

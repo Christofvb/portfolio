@@ -1,0 +1,18 @@
+<div id="<%= modal_id %>"
+     class="modal-overlay hidden fixed inset-0 flex items-start justify-center z-50 pt-20"
+     data-action="click->modal#overlayClick">
+
+  <div class="modal-box rounded-xl w-11/12 max-w-4xl relative overflow-hidden">
+
+    <div class="modal-header px-6 py-4 border-b text-xl font-semibold relative rounded-t-xl text-center text-white">
+      <%= title %>
+      <button class="modal-close absolute top-3 right-4 text-2xl font-bold"
+              data-action="click->modal#close">&times;</button>
+    </div>
+
+    <div class="rich-content p-6 overflow-auto max-h-[85vh]">
+      <%= raw content %>
+    </div>
+
+  </div>
+</div>

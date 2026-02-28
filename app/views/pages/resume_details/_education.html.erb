@@ -1,0 +1,29 @@
+<div class="space-y-6">
+  <% @educations.each_with_index do |education, index| %>
+    <div class="tl-item<%= ' tl-separator' unless index == @educations.size - 1 %>">
+
+      <% unless index == @educations.size - 1 %>
+        <div class="tl-line"></div>
+      <% end %>
+
+      <div class="tl-dot"></div>
+
+      <div class="flex flex-wrap justify-between items-start gap-x-3">
+        <h3 class="font-semibold text-white text-sm leading-snug"><%= education.school %></h3>
+        <span class="text-xs whitespace-nowrap flex-shrink-0 text-muted">
+          <%= education.start_date&.strftime("%m/%Y") %> –
+          <%= education.end_date.present? ? education.end_date.strftime("%m/%Y") : "Présent" %>
+        </span>
+      </div>
+
+      <% if education.degree.present? %>
+        <p class="text-xs font-medium mt-0.5 text-accent"><%= education.degree %></p>
+      <% end %>
+
+      <% if education.description.present? %>
+        <p class="text-xs mt-1 leading-relaxed text-muted"><%= education.description %></p>
+      <% end %>
+
+    </div>
+  <% end %>
+</div>

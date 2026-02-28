@@ -1,0 +1,44 @@
+<h1 class="text-3xl font-bold mb-4"><%= @experience.job_title %></h1>
+
+<p><strong>Société :</strong> <%= @experience.company %></p>
+<p><strong>Ville :</strong> <%= @experience.location %></p>
+<p><strong>Dates :</strong> <%= @experience.start_date %> - <%= @experience.end_date || "En cours" %></p>
+
+<div class="prose max-w-none">
+  <strong>Missions :</strong><br>
+  <div class="rich-content">
+    <%= raw @experience.missions %>
+  </div>
+</div>
+
+<p><strong>Outils / logiciels :</strong><br>
+  <div class="rich-content">
+    <%= raw @experience.tools %>
+  </div>
+</p>
+
+<hr class="my-6">
+
+<h2 class="text-2xl font-semibold mb-3">Projets associés</h2>
+<% if @experience.projects.any? %>
+  <% @experience.projects.each do |project| %>
+    <div class="border rounded prose p-4 mb-3">
+      <p><strong>Nom :</strong> <%= project.name %></p>
+      <p><strong>Description :</strong><br>
+        <div class="rich-content">
+          <%= raw project.description %>
+        </div>
+      </p>
+    </div>
+  <% end %>
+<% else %>
+  <p>Aucun projet associé.</p>
+<% end %>
+
+<hr class="my-6">
+
+<div class="flex gap-4">
+  <%= link_to "← Retour", experiences_path, class: "btn btn-blue" %>
+  <%= link_to "Éditer", edit_experience_path(@experience), class: "btn btn-green" %>
+  <%= link_to "Supprimer", @experience, data: { turbo_method: :delete, turbo_confirm: "Supprimer cette expérience ?" }, class: "btn btn-red" %>
+</div>

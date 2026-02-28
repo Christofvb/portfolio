@@ -1,0 +1,32 @@
+<footer class="footer">
+  <div class="footer-inner">
+
+    <p class="footer-brand">
+      © <%= Time.current.year %> <span>cvb-dev.fr</span> — Christof Van Berendonck
+    </p>
+
+    <div class="footer-links">
+      <a href="tel:+33787399179" class="footer-link" title="Téléphone">
+        <i class="fa-solid fa-phone"></i>
+      </a>
+      <a href="mailto:Christof.vanberendonck@hotmail.com" class="footer-link" title="Email">
+        <i class="fa-solid fa-envelope"></i>
+      </a>
+      <a href="https://fr.linkedin.com/in/christof-van-berendonck-727463b6" target="_blank" class="footer-link" title="LinkedIn">
+        <i class="fa-brands fa-linkedin"></i>
+      </a>
+      <a href="https://github.com/Christofvb" target="_blank" class="footer-link" title="GitHub">
+        <i class="fa-brands fa-github"></i>
+      </a>
+    </div>
+
+    <div>
+      <% if user_signed_in? %>
+        <%= button_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "footer-auth" %>
+      <% else %>
+        <%= link_to "Se connecter", new_user_session_path, class: "footer-auth" %>
+      <% end %>
+    </div>
+
+  </div>
+</footer>

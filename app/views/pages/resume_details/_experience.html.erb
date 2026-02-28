@@ -1,0 +1,64 @@
+<div class="space-y-8" data-controller="modal">
+  <% @experiences.each_with_index do |experience, index| %>
+    <div class="tl-item<%= ' tl-separator' unless index == @experiences.size - 1 %>">
+
+      <% unless index == @experiences.size - 1 %>
+        <div class="tl-line"></div>
+      <% end %>
+
+      <div class="tl-dot"></div>
+
+      <div class="flex flex-wrap items-start justify-between gap-x-4 gap-y-1">
+        <div>
+          <h3 class="font-bold text-white text-base leading-snug"><%= experience.job_title %></h3>
+          <p class="text-sm font-medium text-accent"><%= experience.company %></p>
+        </div>
+        <div class="text-right flex-shrink-0">
+          <span class="tl-date">
+            <%= experience.start_date.strftime("%b %Y") %> –
+            <%= experience.end_date ? experience.end_date.strftime("%b %Y") : "Aujourd'hui" %>
+          </span>
+          <% if experience.location.present? %>
+            <div class="text-xs mt-1 text-right text-muted">
+              <i class="fa-solid fa-location-dot fa-xs tl-location-icon"></i> <%= experience.location %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+
+      <% if experience.missions.present? || experience.tools.present? %>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4">
+          <% if experience.missions.present? %>
+            <div class="tl-panel">
+              <p class="tl-panel-label">Missions</p>
+              <div class="rich-content text-sm"><%= raw experience.missions %></div>
+            </div>
+          <% end %>
+          <% if experience.tools.present? %>
+            <div class="tl-panel">
+              <p class="tl-panel-label">Technologies</p>
+              <div class="rich-content text-sm"><%= raw experience.tools %></div>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+
+      <% if experience.projects.any? %>
+        <div class="mt-3">
+          <p class="tl-panel-label">Projets</p>
+          <div class="flex flex-wrap gap-2">
+            <% experience.projects.each do |project| %>
+              <button class="tl-project-chip"
+                      data-action="click->modal#open"
+                      data-modal-target="project-<%= project.id %>">
+                <i class="fa-regular fa-folder fa-xs mr-1"></i><%= project.name %>
+              </button>
+              <%= render "shared/modal", modal_id: "project-#{project.id}", title: project.name, content: project.description %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+
+    </div>
+  <% end %>
+</div>

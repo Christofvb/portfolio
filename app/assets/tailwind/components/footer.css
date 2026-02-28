@@ -1,0 +1,49 @@
+@layer components {
+  .footer {
+    background-color: var(--cyber-surface);
+    border-top: 1px solid var(--cyber-border);
+    @apply py-3 mt-0;
+  }
+
+  .footer-inner {
+    @apply w-full px-4 md:px-8 flex flex-row items-center justify-between gap-6;
+  }
+
+  .footer-brand {
+    @apply text-sm font-semibold;
+    color: var(--cyber-text-muted);
+  }
+
+  .footer-brand span {
+    color: var(--cyber-cyan);
+  }
+
+  .footer-links {
+    @apply flex items-center gap-5;
+  }
+
+  .footer-link {
+    @apply transition-colors duration-200;
+    color: var(--cyber-text-muted);
+    font-size: 1.1rem;
+  }
+
+  .footer-link:hover {
+    color: var(--cyber-cyan);
+  }
+
+  .footer-auth {
+    @apply text-xs transition-colors duration-200;
+    color: rgba(139, 148, 158, 0.4);
+  }
+
+  .footer-auth:hover {
+    color: var(--cyber-text-muted);
+  }
+
+  .footer-container { @apply max-w-7xl mx-auto flex flex-col items-center gap-4; }
+  .footer-text      { @apply text-center text-sm; color: var(--cyber-text-muted); }
+  .footer-nav       { @apply flex gap-4; }
+  .footer-button    { @apply bg-transparent border-0 p-0 transition-colors duration-200; color: var(--cyber-text-muted); }
+  .footer-button:hover { color: var(--cyber-cyan); }
+}

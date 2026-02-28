@@ -1,0 +1,32 @@
+<h1 class="default-table-title">Toutes les formations</h1>
+
+<div class="mb-4">
+  <%= link_to "Nouvelle formation", new_education_path, class: "btn btn-blue" %>
+</div>
+
+<table class="default-table">
+  <thead>
+    <tr>
+      <th>Ecole</th>
+      <th>Niveau d'étude</th>
+      <th>Dates</th>
+      <th>Nom du diplôme</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @educations.each do |education| %>
+      <tr>
+        <td><%= education.school %></td>
+        <td><%= education.degree %></td>
+        <td><%= education.start_date %> - <%= education.end_date || "En cours" %></td>
+        <td><%= education.description %></td>
+        <td>
+          <%= link_to "Afficher", education_path(education), class: "default-table-link-show" %> |
+          <%= link_to "Éditer", edit_education_path(education), class: "default-table-link-edit" %> |
+          <%= link_to "Supprimer", education_path(education), data: { turbo_method: :delete, turbo_confirm: "Supprimer cette formation ?" }, class: "default-table-link-delete" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

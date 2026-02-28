@@ -1,0 +1,61 @@
+@layer components {
+
+  .default-table-title {
+    @apply text-3xl font-bold mb-6;
+    color: #ffffff;
+  }
+
+  .default-table-button {
+    @apply px-4 py-2 rounded font-medium transition duration-200;
+    border: 1px solid var(--cyber-cyan);
+    color: var(--cyber-cyan);
+    background-color: transparent;
+  }
+
+  .default-table-button:hover {
+    background-color: var(--cyber-cyan);
+    color: var(--cyber-bg);
+    box-shadow: var(--cyber-glow-sm);
+  }
+
+  .default-table {
+    @apply w-full border-collapse;
+  }
+
+  .default-table thead tr {
+    border-bottom: 1px solid var(--cyber-border);
+    background-color: var(--cyber-surface-2);
+  }
+
+  .default-table th {
+    @apply p-3 text-left font-semibold text-sm uppercase tracking-wider;
+    color: var(--cyber-text-muted);
+  }
+
+  .default-table tbody tr {
+    border-bottom: 1px solid rgba(0, 212, 255, 0.06);
+    transition: background-color 0.15s;
+  }
+
+  .default-table tbody tr:hover {
+    background-color: var(--cyber-surface-2);
+  }
+
+  .default-table td {
+    @apply p-3;
+    color: var(--cyber-text);
+  }
+
+  .default-table-link-show {
+    color: var(--cyber-cyan);
+    @apply hover:underline;
+  }
+
+  .default-table-link-edit {
+    @apply text-green-400 hover:underline;
+  }
+
+  .default-table-link-delete {
+    @apply text-red-400 hover:underline;
+  }
+}

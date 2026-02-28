@@ -1,0 +1,11 @@
+@import "tailwindcss";
+@import "./global.css";
+@import "./components/buttons";
+@import "./components/cards";
+@import "./components/footer";
+@import "./components/header";
+@import "./components/default_form";
+@import "./components/default_table";
+@import "./components/skills_list";
+@import "./components/education_list";
+@import "./components/resume_page";

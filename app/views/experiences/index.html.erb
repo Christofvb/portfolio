@@ -1,0 +1,33 @@
+<h1 class="default-table-title">Toutes les expériences Professionnelles</h1>
+
+<div class="mb-4">
+  <%= link_to "Nouvelle expérience", new_experience_path, class: "btn btn-blue" %>
+</div>
+
+<table class="default-table">
+  <thead>
+    <tr>
+      <th>Poste</th>
+      <th>Société</th>
+      <th>Ville</th>
+      <th>Dates</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @experiences.each do |experience| %>
+      <tr>
+        <td><%= experience.job_title %></td>
+        <td><%= experience.company %></td>
+        <td><%= experience.location %></td>
+        <td><%= experience.start_date %> - <%= experience.end_date || "En cours" %></td>
+        <td>
+          <%= link_to "Afficher", experience_path(experience), class: "default-table-link-show" %> |
+          <%= link_to "Éditer", edit_experience_path(experience), class: "default-table-link-edit" %> |
+          <%= link_to "Supprimer", experience_path(experience), data: { turbo_method: :delete, turbo_confirm: "Supprimer cette expérience ?" }, class: "default-table-link-delete" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

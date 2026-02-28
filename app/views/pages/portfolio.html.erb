@@ -1,0 +1,52 @@
+<% content_for :full_width, '1' %>
+
+<div class="page-banner">
+  <div class="max-w-6xl mx-auto px-6 py-10">
+    <span class="cyber-eyebrow">Open Source &amp; projets perso</span>
+    <h1 class="text-4xl font-black text-white uppercase tracking-tight">Portfolio</h1>
+    <p class="mt-2 text-sm text-muted">
+      Mes dépôts publics GitHub — Ruby, JavaScript et plus.
+    </p>
+  </div>
+</div>
+
+<div class="max-w-6xl mx-auto px-6 py-10 pb-16">
+
+  <% if @repos.any? %>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <% @repos.each do |repo| %>
+        <a href="<%= repo["html_url"] %>" target="_blank" class="portfolio-card group">
+
+          <div class="flex items-start gap-3 mb-3">
+            <div class="cyber-card-icon mt-0.5 w-9 h-9 text-sm flex-shrink-0">
+              <i class="fa-brands fa-github"></i>
+            </div>
+            <h3 class="font-bold text-white text-sm leading-snug group-hover:text-cyan-400 transition-colors">
+              <%= repo["name"] %>
+            </h3>
+          </div>
+
+          <% if repo["description"].present? %>
+            <p class="text-xs leading-relaxed mb-4 text-muted">
+              <%= repo["description"] %>
+            </p>
+          <% end %>
+
+          <% if repo["language"].present? %>
+            <span class="cyber-pill"><%= repo["language"] %></span>
+          <% end %>
+
+        </a>
+      <% end %>
+    </div>
+
+  <% else %>
+    <div class="text-center py-20">
+      <div class="cyber-card-icon mx-auto mb-4 w-14 h-14 text-2xl">
+        <i class="fa-brands fa-github"></i>
+      </div>
+      <p class="font-semibold text-white">Aucun projet disponible pour le moment.</p>
+    </div>
+  <% end %>
+
+</div>

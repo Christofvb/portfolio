@@ -1,0 +1,26 @@
+<div class="default-form">
+  <h2 class="default-form-title">
+    <%= skill.new_record? ? "Créer une compétence" : "Modifier la compétence" %>
+  </h2>
+
+  <%= form_with(model: skill, class: "space-y-6") do |f| %>
+
+    <div class="default-form-grid">
+      <div>
+        <%= f.label :name, "Nom de la compétence", class: "default-form-label" %>
+        <%= f.text_field :name, class: "default-form-input" %>
+      </div>
+
+      <div>
+        <%= f.label :image_path, "Image path", class: "default-form-label" %>
+        <%= f.text_field :image_path, class: "default-form-input" %>
+      </div>
+
+     <%= f.label :skill_type, "Type de compétence" %>
+<%= f.select :skill_type, options_for_select(Skill::SKILL_TYPES.map { |k, v| [k.to_s.humanize, v] }, @skill.skill_type), class: "default-form-input" %>
+
+    </div>
+
+    <%= f.submit "Enregistrer", class: "default-form-submit" %>
+  <% end %>
+</div>

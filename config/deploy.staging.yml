@@ -1,0 +1,24 @@
+# Staging overrides — applied on top of deploy.yml when running:
+#   KAMAL_DESTINATION=staging bin/kamal deploy
+
+service: portfolio-staging
+
+servers:
+  web:
+    - 0.0.0.0 # TODO: replace with your staging server IP
+
+proxy:
+  ssl: true
+  host: staging.cvb-dev.fr
+
+env:
+  secret:
+    - RAILS_MASTER_KEY
+  clear:
+    RAILS_ENV: staging
+    SOLID_QUEUE_IN_PUMA: true
+
+volumes:
+  - "portfolio_staging_storage:/rails/storage"
+
+asset_path: /rails/public/assets

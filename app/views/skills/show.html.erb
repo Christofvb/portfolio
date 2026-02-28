@@ -1,0 +1,38 @@
+<h1 class="default-table-title"><%= @skill.name %></h1>
+
+<div class="mb-6 flex gap-3">
+  <%= link_to "Éditer", edit_skill_path(@skill), class: "btn btn-blue" %>
+  <%= link_to "Retour à la liste", skills_path, class: "btn btn-gray" %>
+</div>
+
+<table class="default-table">
+  <tbody>
+    <tr>
+      <th>Nom</th>
+      <td><%= @skill.name %></td>
+    </tr>
+    <tr>
+      <th>Type</th>
+      <td><%= @skill.skill_type_label %></td>
+    </tr>
+    <tr>
+      <th>Image</th>
+      <td>
+        <% if @skill.image_path.present? %>
+          <div class="flex items-center gap-3">
+            <%= image_tag @skill.image_path, class: "w-10 h-10 object-contain rounded", alt: @skill.name %>
+            <span class="text-sm"><%= @skill.image_path %></span>
+          </div>
+        <% else %>
+          <span>Aucune image</span>
+        <% end %>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="mt-6">
+  <%= link_to "Supprimer", skill_path(@skill),
+        data: { turbo_method: :delete, turbo_confirm: "Supprimer « #{@skill.name} » ?" },
+        class: "btn btn-red" %>
+</div>
