@@ -43,8 +43,10 @@ class ExperiencesController < ApplicationController
 
   def experience_params
     params.require(:experience).permit(
-      :job_title, :company, :location, :start_date, :end_date,
-      :missions, :tools,
+      :company, :location, :start_date, :end_date,
+      :job_title_fr, :job_title_en, :job_title_nl,
+      :missions_fr,  :missions_en,  :missions_nl,
+      :tools_fr,     :tools_en,     :tools_nl,
       projects_attributes: [:id, :name, :description, :_destroy]
     )
   end
