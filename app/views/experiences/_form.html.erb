@@ -7,11 +7,6 @@
 
     <div class="default-form-grid">
       <div>
-        <%= f.label :job_title, "Nom du poste occupé", class: "default-form-label" %>
-        <%= f.text_field :job_title, class: "default-form-input" %>
-      </div>
-
-      <div>
         <%= f.label :company, "Société", class: "default-form-label" %>
         <%= f.text_field :company, class: "default-form-input" %>
       </div>
@@ -32,15 +27,35 @@
       </div>
     </div>
 
-    <div data-controller="tinymce">
-      <%= f.label :missions, "Missions", class: "default-form-label" %>
-      <%= f.text_area :missions, class: "default-form-input editor" %>
-    </div>
+    <% [[:fr, "🇫🇷 Français"], [:en, "🇬🇧 English"], [:nl, "🇳🇱 Nederlands"]].each do |locale, label| %>
+      <div class="border border-cyan-900 rounded-lg p-4 space-y-4">
+        <p class="text-xs font-bold uppercase tracking-widest text-cyan-400"><%= label %></p>
 
-    <div data-controller="tinymce">
-      <%= f.label :tools, "Outils / logiciels", class: "default-form-label" %>
-      <%= f.text_area :tools, class: "default-form-input editor" %>
-    </div>
+        <div>
+          <%= label_tag "experience_job_title_#{locale}", "Intitulé du poste", class: "default-form-label" %>
+          <%= text_field_tag "experience[job_title_#{locale}]",
+                             experience.send("job_title_#{locale}"),
+                             id: "experience_job_title_#{locale}",
+                             class: "default-form-input" %>
+        </div>
+
+        <div data-controller="tinymce">
+          <%= label_tag "experience_missions_#{locale}", "Missions", class: "default-form-label" %>
+          <%= text_area_tag "experience[missions_#{locale}]",
+                            experience.send("missions_#{locale}"),
+                            id: "experience_missions_#{locale}",
+                            class: "default-form-input editor" %>
+        </div>
+
+        <div data-controller="tinymce">
+          <%= label_tag "experience_tools_#{locale}", "Outils / technologies", class: "default-form-label" %>
+          <%= text_area_tag "experience[tools_#{locale}]",
+                            experience.send("tools_#{locale}"),
+                            id: "experience_tools_#{locale}",
+                            class: "default-form-input editor" %>
+        </div>
+      </div>
+    <% end %>
 
     <h3 class="default-form-section-title">Projets liés</h3>
     <div data-controller="projects">
@@ -64,6 +79,7 @@
         </div>
       </template>
     </div>
+
     <%= f.submit "Enregistrer", class: "default-form-submit" %>
   <% end %>
 </div>
