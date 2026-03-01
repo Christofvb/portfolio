@@ -57,10 +57,20 @@ body {
 
 .cyber-avatar-wrapper {
   position: relative;
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
+  width: 240px;
+  height: 240px;
   animation: float-y 5s ease-in-out infinite;
+}
+
+@media (min-width: 640px) {
+  .cyber-avatar-wrapper { width: 294px; height: 294px; }
+}
+
+@media (min-width: 1024px) {
+  .cyber-avatar-wrapper { width: 316px; height: 316px; }
 }
 
 .cyber-avatar {
