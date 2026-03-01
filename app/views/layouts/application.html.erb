@@ -23,9 +23,11 @@
 
   <body class="min-h-screen flex flex-col base-text">
 
+    <canvas id="network-canvas" data-controller="network"></canvas>
+
     <%= render "layouts/header" %>
 
-    <main class="flex-1 w-full">
+    <main class="flex-1 w-full relative z-10">
       <% if content_for?(:full_width) %>
         <%= yield %>
       <% else %>
