@@ -12,8 +12,12 @@ fr:
     btn_resume: "Mon CV"
     card_arch:
       title: "Architecture Rails"
+      sql_opt: "Optimisation SQL"
     card_code:
       title: "Code maintenable"
+      readable: "Lisible"
+      robust: "Robuste"
+      maintainable: "Maintenable"
     card_exp:
       title: "Expérience"
       years: "ans"
@@ -21,6 +25,8 @@ fr:
       curious: "Curieux"
       rigorous: "Rigoureux"
       detail: "Sens du détail"
+      solution: "Orienté solution"
+      teamwork: "Esprit d'équipe"
   resume:
     job_title: "Développeur Web Fullstack"
     download: "Télécharger"

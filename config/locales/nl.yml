@@ -12,8 +12,12 @@ nl:
     btn_resume: "Mijn CV"
     card_arch:
       title: "Rails Architectuur"
+      sql_opt: "SQL-optimalisatie"
     card_code:
       title: "Onderhoudbare Code"
+      readable: "Leesbaar"
+      robust: "Robuust"
+      maintainable: "Onderhoudbaar"
     card_exp:
       title: "Ervaring"
       years: "jaar"
@@ -21,6 +25,8 @@ nl:
       curious: "Nieuwsgierig"
       rigorous: "Rigoureus"
       detail: "Oog voor detail"
+      solution: "Oplossingsgericht"
+      teamwork: "Teamspeler"
   resume:
     job_title: "Fullstack Webontwikkelaar"
     download: "Downloaden"
