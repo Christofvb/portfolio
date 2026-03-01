@@ -1,18 +1,18 @@
 require "test_helper"
 
 class PagesControllerTest < ActionDispatch::IntegrationTest
-  test "should get home" do
-    get pages_home_url
+  test "home page is publicly accessible" do
+    get root_path
     assert_response :success
   end
 
-  test "should get experience" do
-    get pages_experience_url
+  test "resume page is publicly accessible" do
+    get curriculum_vitae_path
     assert_response :success
   end
 
-  test "should get about" do
-    get pages_about_url
+  test "portfolio page is publicly accessible" do
+    get portfolio_path
     assert_response :success
   end
 end
