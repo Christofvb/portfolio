@@ -92,3 +92,13 @@ en:
     title: "Open Source & personal projects"
     subtitle: "My public GitHub repos — Ruby, JavaScript and more."
     empty: "No projects available at the moment."
+  seo:
+    home:
+      title: "Christof Van Berendonck – Fullstack Web Developer Ruby on Rails"
+      description: "Portfolio of Christof Van Berendonck, fullstack web developer specialised in Ruby on Rails, JavaScript, Hotwire and Tailwind CSS. Based in Belgium."
+    resume:
+      title: "Resume – Christof Van Berendonck | Fullstack Web Developer Ruby on Rails"
+      description: "Professional background, technical skills and experience of Christof Van Berendonck, fullstack Ruby on Rails web developer based in Belgium."
+    portfolio:
+      title: "Portfolio – Christof Van Berendonck | Ruby on Rails & Open Source Projects"
+      description: "Open source and personal projects by Christof Van Berendonck: Ruby on Rails, JavaScript, REST APIs and more on GitHub."

@@ -1,14 +1,65 @@
 <!DOCTYPE html>
-<html>
+<html lang="<%= I18n.locale %>">
   <head>
-    <title><%= content_for(:title) || "Christof Van Berendonck – Dev Web Fullstack" %></title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%# ── Titles & descriptions ──────────────────────────────────────────────── %>
+    <% page_title       = content_for?(:title)       ? yield(:title).strip       : "Christof Van Berendonck" %>
+    <% page_description = content_for?(:description) ? yield(:description).strip : t("seo.home.description") %>
+
+    <title><%= page_title %></title>
+    <meta name="description" content="<%= page_description %>">
+    <meta name="author"      content="Christof Van Berendonck">
+    <meta name="robots"      content="index, follow">
+
+    <%# ── Viewport ───────────────────────────────────────────────────────────── %>
+    <meta name="viewport"                content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable"  content="yes">
+
+    <%# ── Open Graph ─────────────────────────────────────────────────────────── %>
+    <meta property="og:type"        content="website">
+    <meta property="og:site_name"   content="Christof Van Berendonck">
+    <meta property="og:locale"      content="<%= og_locale %>">
+    <meta property="og:title"       content="<%= page_title %>">
+    <meta property="og:description" content="<%= page_description %>">
+    <meta property="og:url"         content="<%= request.original_url %>">
+    <meta property="og:image"       content="<%= image_url("avatar.png") %>">
+    <meta property="og:image:alt"   content="Christof Van Berendonck">
+    <meta property="og:image:width" content="400">
+    <meta property="og:image:height" content="400">
+
+    <%# ── Twitter Card ───────────────────────────────────────────────────────── %>
+    <meta name="twitter:card"        content="summary">
+    <meta name="twitter:title"       content="<%= page_title %>">
+    <meta name="twitter:description" content="<%= page_description %>">
+    <meta name="twitter:image"       content="<%= image_url("avatar.png") %>">
+
+    <%# ── Canonical & hreflang ───────────────────────────────────────────────── %>
+    <link rel="canonical"  href="<%= locale_url(I18n.locale == I18n.default_locale ? nil : I18n.locale) %>">
+    <link rel="alternate"  hreflang="fr"        href="<%= locale_url(:fr) %>">
+    <link rel="alternate"  hreflang="en"        href="<%= locale_url(:en) %>">
+    <link rel="alternate"  hreflang="nl"        href="<%= locale_url(:nl) %>">
+    <link rel="alternate"  hreflang="x-default" href="<%= locale_url(nil) %>">
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= yield :head %>
+
+    <%# ── JSON-LD – Person schema ─────────────────────────────────────────────── %>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Christof Van Berendonck",
+      "jobTitle": "<%= t("resume.job_title") %>",
+      "url": "<%= root_url %>",
+      "image": "<%= image_url("avatar.png") %>",
+      "sameAs": [
+        "https://github.com/Christofvb",
+        "https://www.codewars.com/users/Christofvb"
+      ]
+    }
+    </script>
 
     <script src="https://cdn.tiny.cloud/1/<%= Rails.application.credentials.dig(:tiny_mce, :api_key)%>/tinymce/8/tinymce.min.js" referrerpolicy="origin" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

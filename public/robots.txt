@@ -1,1 +1,9 @@
-# See https://www.robotstxt.org/robotstxt.html for documentation on how to use the robots.txt file
+User-agent: *
+Allow: /
+Disallow: /skills
+Disallow: /educations
+Disallow: /experiences
+Disallow: /projects
+Disallow: /users/
+
+Sitemap: https://cvb-dev.fr/sitemap.xml

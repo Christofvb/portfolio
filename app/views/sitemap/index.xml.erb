@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="https://www.w3.org/1999/xhtml">
+  <% @pages.each do |page| %>
+    <% @locales.each do |locale| %>
+      <url>
+        <loc><%= "#{request.base_url}#{page[:path]}?locale=#{locale}" %></loc>
+        <lastmod><%= @updated_at %></lastmod>
+        <changefreq><%= page[:changefreq] %></changefreq>
+        <priority><%= page[:priority] %></priority>
+        <% @locales.each do |alt_locale| %>
+        <xhtml:link rel="alternate" hreflang="<%= alt_locale %>" href="<%= "#{request.base_url}#{page[:path]}?locale=#{alt_locale}" %>"/>
+        <% end %>
+        <xhtml:link rel="alternate" hreflang="x-default" href="<%= "#{request.base_url}#{page[:path]}" %>"/>
+      </url>
+    <% end %>
+  <% end %>
+</urlset>
