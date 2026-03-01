@@ -3,7 +3,7 @@
 <% content_for :description, t("seo.portfolio.description") %>
 
 <div class="page-banner">
-  <div class="max-w-6xl mx-auto px-6 py-10">
+  <div class="max-w-6xl mx-auto px-4 md:px-6 py-10">
     <span class="cyber-eyebrow"><%= t("portfolio.title") %></span>
     <h1 class="text-4xl font-black text-white uppercase tracking-tight">Portfolio</h1>
     <p class="mt-2 text-sm text-muted">
@@ -12,7 +12,7 @@
   </div>
 </div>
 
-<div class="max-w-6xl mx-auto px-6 py-10 pb-16">
+<div class="max-w-6xl mx-auto px-4 md:px-6 py-10 pb-16">
 
   <% if @repos.any? %>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">

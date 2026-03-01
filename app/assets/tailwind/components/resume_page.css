@@ -12,9 +12,13 @@
 
   .resume-panel {
     border-radius: 0.75rem;
-    padding: 1.5rem;
+    padding: 1rem;
     background-color: var(--cyber-surface);
     border: 1px solid var(--cyber-border);
+  }
+
+  @media (min-width: 640px) {
+    .resume-panel { padding: 1.5rem; }
   }
 
   .lang-row {

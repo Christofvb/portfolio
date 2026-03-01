@@ -26,7 +26,9 @@
             <i class="fa-solid fa-phone fa-xs text-accent"></i> +33 7 87 39 91 79
           </a>
           <a href="mailto:Christof.vanberendonck@hotmail.com" class="flex items-center gap-1.5 transition-colors hover:text-white">
-            <i class="fa-solid fa-envelope fa-xs text-accent"></i> Christof.vanberendonck@hotmail.com
+            <i class="fa-solid fa-envelope fa-xs text-accent"></i>
+            <span class="hidden sm:inline">Christof.vanberendonck@hotmail.com</span>
+            <span class="sm:hidden">Email</span>
           </a>
           <a href="https://fr.linkedin.com/in/christof-van-berendonck-727463b6" target="_blank" class="flex items-center gap-1.5 transition-colors hover:text-white">
             <i class="fa-brands fa-linkedin fa-xs text-accent"></i> LinkedIn
@@ -44,7 +46,7 @@
   </div>
 </div>
 
-<div class="w-full px-4 md:px-8 py-10 pb-16 grid grid-cols-1 lg:grid-cols-[5fr_7fr] gap-8">
+<div class="w-full px-4 md:px-8 py-10 pb-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[5fr_7fr] gap-6 md:gap-8">
 
   <div class="flex flex-col gap-6">
 
@@ -65,7 +67,7 @@
       <h2 class="text-sm font-bold text-white uppercase tracking-widest mb-5">Codewars</h2>
 
       <% if @codewars_profile.present? %>
-        <div class="codewars-card max-w-sm">
+        <div class="codewars-card w-full">
           <img
             src="https://www.codewars.com/users/Christofvb/badges/large"
             alt="Codewars Badge"
