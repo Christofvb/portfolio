@@ -6,4 +6,4 @@ Disallow: /experiences
 Disallow: /projects
 Disallow: /users/
 
-Sitemap: https://cvb-dev.fr/sitemap.xml
+Sitemap: https://www.cvb-dev.fr/sitemap.xml
