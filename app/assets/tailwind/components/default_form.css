@@ -1,7 +1,7 @@
 @layer components {
 
   .default-form {
-    @apply mx-auto max-w-3xl p-8 rounded-2xl;
+    @apply mx-auto max-w-3xl p-4 sm:p-8 rounded-2xl;
     background-color: var(--cyber-surface);
     border: 1px solid var(--cyber-border);
     box-shadow: var(--cyber-glow-sm);

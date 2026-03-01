@@ -1,41 +1,69 @@
-<header class="header">
+<header class="header" data-controller="menu">
   <div class="header-inner">
 
     <%= link_to root_path do %>
       <%= image_tag "logos/logo_dev.png", alt: "Logo", class: "h-8 w-auto" %>
     <% end %>
 
-    <nav class="flex items-center">
-      <%= link_to t("nav.home"),    root_path,             class: "header-link#{' active' if current_page?(root_path)}" %>
-      <%= link_to t("nav.resume"), curriculum_vitae_path,  class: "header-link#{' active' if current_page?(curriculum_vitae_path)}" %>
-      <%= link_to t("nav.portfolio"), portfolio_path,      class: "header-link#{' active' if current_page?(portfolio_path)}" %>
+    <%# Desktop nav — hidden on mobile %>
+    <nav class="hidden sm:flex items-center">
+      <%= link_to t("nav.home"),      root_path,             class: "header-link#{' active' if current_page?(root_path)}" %>
+      <%= link_to t("nav.resume"),    curriculum_vitae_path, class: "header-link#{' active' if current_page?(curriculum_vitae_path)}" %>
+      <%= link_to t("nav.portfolio"), portfolio_path,        class: "header-link#{' active' if current_page?(portfolio_path)}" %>
 
       <% if user_signed_in? %>
         <div class="header-divider mx-2"></div>
-        <%= link_to "Skills",     skills_path,      class: "header-admin-link" %>
-        <%= link_to "Éducation",  educations_path,   class: "header-admin-link" %>
-        <%= link_to "Expérience", experiences_path,  class: "header-admin-link" %>
-        <%= link_to "Projets",    projects_path,     class: "header-admin-link" %>
+        <div class="hidden lg:flex items-center">
+          <%= link_to "Skills",     skills_path,      class: "header-admin-link" %>
+          <%= link_to "Éducation",  educations_path,  class: "header-admin-link" %>
+          <%= link_to "Expérience", experiences_path, class: "header-admin-link" %>
+          <%= link_to "Projets",    projects_path,    class: "header-admin-link" %>
+        </div>
       <% end %>
     </nav>
 
-    <div class="header-flags">
-      <a href="<%= request.path %>?locale=fr"
-         class="header-flag-btn <%= 'active' if I18n.locale == :fr %>"
-         title="Français">
-        <img src="https://flagcdn.com/fr.svg" alt="FR">
-      </a>
-      <a href="<%= request.path %>?locale=nl"
-         class="header-flag-btn <%= 'active' if I18n.locale == :nl %>"
-         title="Néerlandais">
-        <img src="https://flagcdn.com/nl.svg" alt="NL">
-      </a>
-      <a href="<%= request.path %>?locale=en"
-         class="header-flag-btn <%= 'active' if I18n.locale == :en %>"
-         title="English">
-        <img src="https://flagcdn.com/gb.svg" alt="EN">
-      </a>
+    <div class="flex items-center gap-3">
+      <div class="header-flags">
+        <a href="<%= request.path %>?locale=fr"
+           class="header-flag-btn <%= 'active' if I18n.locale == :fr %>"
+           title="Français">
+          <img src="https://flagcdn.com/fr.svg" alt="FR">
+        </a>
+        <a href="<%= request.path %>?locale=nl"
+           class="header-flag-btn <%= 'active' if I18n.locale == :nl %>"
+           title="Néerlandais">
+          <img src="https://flagcdn.com/nl.svg" alt="NL">
+        </a>
+        <a href="<%= request.path %>?locale=en"
+           class="header-flag-btn <%= 'active' if I18n.locale == :en %>"
+           title="English">
+          <img src="https://flagcdn.com/gb.svg" alt="EN">
+        </a>
+      </div>
+
+      <%# Burger button — visible on mobile only %>
+      <button data-action="menu#toggle" class="sm:hidden p-2 transition-colors" style="color: var(--cyber-text-muted);" aria-label="Menu">
+        <i class="fa-solid fa-bars text-base" data-menu-target="icon"></i>
+      </button>
     </div>
 
   </div>
+
+  <%# Mobile nav — toggled by burger, hidden by default %>
+  <nav class="hidden sm:hidden" data-menu-target="menu">
+    <div class="mobile-nav-panel">
+      <%= link_to t("nav.home"),      root_path,             class: "mobile-nav-link#{' active' if current_page?(root_path)}" %>
+      <%= link_to t("nav.resume"),    curriculum_vitae_path, class: "mobile-nav-link#{' active' if current_page?(curriculum_vitae_path)}" %>
+      <%= link_to t("nav.portfolio"), portfolio_path,        class: "mobile-nav-link#{' active' if current_page?(portfolio_path)}" %>
+
+      <% if user_signed_in? %>
+        <div class="mobile-nav-divider"></div>
+        <%= link_to "Skills",     skills_path,      class: "mobile-nav-link mobile-nav-admin" %>
+        <%= link_to "Éducation",  educations_path,  class: "mobile-nav-link mobile-nav-admin" %>
+        <%= link_to "Expérience", experiences_path, class: "mobile-nav-link mobile-nav-admin" %>
+        <%= link_to "Projets",    projects_path,    class: "mobile-nav-link mobile-nav-admin" %>
+      <% end %>
+    </div>
+  </nav>
+
 </header>

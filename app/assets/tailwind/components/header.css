@@ -78,4 +78,31 @@
     color: var(--cyber-cyan);
     border-color: var(--cyber-border);
   }
+
+  /* ── Mobile nav ──────────────────────────────────────────── */
+  .mobile-nav-panel {
+    @apply flex flex-col px-4 py-3 gap-1;
+    border-top: 1px solid var(--cyber-border);
+    background-color: var(--cyber-surface);
+  }
+
+  .mobile-nav-link {
+    @apply px-3 py-2.5 text-sm font-medium rounded-lg transition-colors duration-200;
+    color: var(--cyber-text-muted);
+  }
+
+  .mobile-nav-link:hover,
+  .mobile-nav-link.active {
+    color: var(--cyber-cyan);
+    background-color: var(--cyber-cyan-dim);
+  }
+
+  .mobile-nav-admin {
+    @apply text-xs;
+  }
+
+  .mobile-nav-divider {
+    @apply my-1;
+    border-top: 1px solid rgba(0, 212, 255, 0.08);
+  }
 }

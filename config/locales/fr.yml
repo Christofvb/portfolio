@@ -66,10 +66,10 @@ fr:
   seo:
     home:
       title: "Christof Van Berendonck – Développeur Web Fullstack Ruby on Rails"
-      description: "Portfolio de Christof Van Berendonck, développeur web fullstack spécialisé en Ruby on Rails, JavaScript, Hotwire et Tailwind CSS. Basé en Belgique."
+      description: "Portfolio de Christof Van Berendonck, développeur web fullstack spécialisé en Ruby on Rails, JavaScript, Hotwire et Tailwind CSS. Basé en France."
     resume:
       title: "CV – Christof Van Berendonck | Développeur Web Fullstack Ruby on Rails"
-      description: "Parcours professionnel, compétences techniques et expériences de Christof Van Berendonck, développeur web fullstack Ruby on Rails basé en Belgique."
+      description: "Parcours professionnel, compétences techniques et expériences de Christof Van Berendonck, développeur web fullstack Ruby on Rails basé en France."
     portfolio:
       title: "Portfolio – Christof Van Berendonck | Projets Ruby on Rails & Open Source"
       description: "Projets open source et personnels de Christof Van Berendonck : Ruby on Rails, JavaScript, API REST et plus sur GitHub."

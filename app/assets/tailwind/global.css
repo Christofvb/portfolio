@@ -64,14 +64,22 @@ body {
 }
 
 .cyber-avatar {
-  width: 220px;
-  height: 220px;
+  width: 160px;
+  height: 160px;
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid var(--cyber-cyan);
   box-shadow: 0 0 28px rgba(0, 212, 255, 0.65), 0 0 70px rgba(0, 212, 255, 0.18);
   position: relative;
   z-index: 2;
+}
+
+@media (min-width: 640px) {
+  .cyber-avatar { width: 200px; height: 200px; }
+}
+
+@media (min-width: 1024px) {
+  .cyber-avatar { width: 220px; height: 220px; }
 }
 
 .cyber-ring {
@@ -82,17 +90,27 @@ body {
 }
 
 .cyber-ring-1 {
-  width: 268px;
-  height: 268px;
+  width: 200px;
+  height: 200px;
   border: 1.5px solid rgba(0, 212, 255, 0.45);
   animation: ring-pulse 3s ease-in-out infinite;
 }
 
 .cyber-ring-2 {
-  width: 316px;
-  height: 316px;
+  width: 240px;
+  height: 240px;
   border: 1px solid rgba(0, 212, 255, 0.18);
   animation: ring-pulse 3s ease-in-out infinite 1.5s;
+}
+
+@media (min-width: 640px) {
+  .cyber-ring-1 { width: 248px; height: 248px; }
+  .cyber-ring-2 { width: 294px; height: 294px; }
+}
+
+@media (min-width: 1024px) {
+  .cyber-ring-1 { width: 268px; height: 268px; }
+  .cyber-ring-2 { width: 316px; height: 316px; }
 }
 
 .cyber-eyebrow {
